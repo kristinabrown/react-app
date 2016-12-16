@@ -12,18 +12,26 @@ class App extends React.Component {
     this.setState({txt: e.target.value})
   }
   render(){
-    let txt = this.props.txt
     return (
-      <div>
-        <h1>{this.state.txt} - {this.state.cat}</h1>
-        <Widget updateText={this.updateText.bind(this)}/>
-      </div>
+      <Button>I <Heart/> React</Button>
+      // <div>
+      //   <h1>{this.state.txt} - {this.state.cat}</h1>
+      //   <Widget updateText={this.updateText.bind(this)}/>
+      // </div>
     )
   }
 }
 
-const Widget = (props) =>
-  <input type='text' onChange={props.updateText}/>
+const Button = (props) => <button>{props.children}</button>
+
+class Heart extends React.Component {
+  render() {
+    return <span>&hearts;</span>
+  }
+}
+
+// const Widget = (props) =>
+//   <input type='text' onChange={props.updateText}/>
 // props are meant to remain static
 // App.propTypes = {
 //   txt: React.PropTypes.string,
